@@ -12,9 +12,8 @@ public class Hexagon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.rotation = Random.Range (0f, 360f);
+        rb.rotation = Random.Range (0, 6) * 60;
         transform.localScale = Vector3.one * 10f;
-
     }
 
     // Update is called once per frame
