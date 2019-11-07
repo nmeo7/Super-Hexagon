@@ -22,10 +22,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         float axis = Input.GetAxisRaw("Horizontal");
-        if (axis == movement)
-            return;
-
-        movement = axis;
 
         if (Input.touchCount > 0)
         {
@@ -37,16 +33,21 @@ public class Player : MonoBehaviour
             // if (touch.phase == TouchPhase.Ended)
             {
                 if (touch.position.x > width)
-                    movement = 1;
+                    axis = 1;
                 else
-                    movement = -1;
+                    axis = -1;
             }
 
-            Debug.Log (touch.position);
+            // Debug.Log (touch.position);
         }
 
-        Debug.Log (movement);
-        
+        if (axis == movement)
+            return;
+
+        movement = axis;
+
+        // Debug.Log (movement);
+
         transform.RotateAround (Vector3.zero, Vector3.forward, - movement * 60 );
 
     }
