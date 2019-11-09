@@ -52,13 +52,16 @@ public class Player : MonoBehaviour
 
     }
 
-    private void FixedUpdate ()
-    {
-    }
-
     private void OnTriggerEnter2D (Collider2D collision)
     {
-        SceneManager.LoadScene ( SceneManager.GetActiveScene().buildIndex );
-        Debug.Log ("GAME OVER!");
+        /*if (lives == 0)
+        {
+            lives = 3;
+            Debug.Log ("GAME OVER!");
+        }
+        else
+            SceneManager.LoadScene ( SceneManager.GetActiveScene().buildIndex );*/
+
+        SceneManager.LoadScene (0); // SceneManager.GetActiveScene().buildIndex );
     }
 }
